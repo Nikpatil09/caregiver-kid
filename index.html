@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caregiver Kid</title>
+<style>
+  :root { --text:#1d1d1f; --muted:#555; --accent:#1a9e75; --bg:#fff; --card:#f4f6f5; }
+  @media (prefers-color-scheme: dark) { :root { --text:#f2f2f2; --muted:#b0b0b0; --bg:#111; --card:#1c1f1e; } }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 -apple-system, system-ui, sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:40px 16px 80px; }
+  h1 { font-size:34px; margin:0 0 4px; } h2 { font-size:22px; margin-top:36px; color:var(--accent); }
+  p.lead { color:var(--muted); font-size:19px; margin-top:0; }
+  .card { background:var(--card); border-radius:14px; padding:16px 20px; }
+  li { margin:4px 0; } small { color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Caregiver Kid</h1>
+  <p class="lead">A family app for parents: what your child ate, slept and took today, what's coming up, and their health records in one place.</p>
+
+  <h2>What it does</h2>
+  <ul>
+    <li>One-tap logging of meals, sleep, diapers, baths and medicine, shared between parents.</li>
+    <li>Coming up: doctor visits, school papers and events.</li>
+    <li>Health, school, activities, feelings and memories for each child.</li>
+  </ul>
+
+  <h2>Connecting MyChart</h2>
+  <div class="card">
+    <p>A parent can bring in their child's records from MyChart (Epic) using the standard SMART on FHIR patient access. The parent signs in on their health system's own MyChart page; Caregiver Kid never sees or stores the MyChart password.</p>
+    <p>Caregiver Kid only <strong>reads</strong> these records, and only for the patient the parent picks when signing in:</p>
+    <ul>
+      <li>Immunizations</li>
+      <li>Vital signs (height and weight)</li>
+      <li>Allergies</li>
+      <li>Medication orders</li>
+      <li>Visits and booked appointments</li>
+      <li>Basic patient details (to confirm whose records they are)</li>
+    </ul>
+    <p>It never writes anything back to the health record.</p>
+  </div>
+
+  <h2>Privacy</h2>
+  <ul>
+    <li><strong>Where your data lives:</strong> on your family's own Carelog box at home. Records go from MyChart to the parent's phone to that box. There is no Caregiver Kid cloud server, and records are not sent to any other company.</li>
+    <li><strong>Sign-in:</strong> the MyChart sign-in is used once to read the records, then discarded. No hospital login or token is stored.</li>
+    <li><strong>Who sees it:</strong> only people the family adds to their box. Helpers such as a nanny can be limited and cannot connect MyChart.</li>
+    <li><strong>No selling, no ads, no tracking.</strong></li>
+    <li><strong>Removing it:</strong> records can be hidden in the app, and the family can delete their box's data at any time.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Questions: open an issue on this site's GitHub repository.</p>
+  <p><small>Caregiver Kid is a prototype from Kian Labs. It does not give medical advice.</small></p>
+</main>
+</body>
+</html>
