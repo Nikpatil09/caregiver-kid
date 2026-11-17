@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Back to Caregiver Kid</title>
+<style>
+  body { margin:0; font:18px/1.5 -apple-system, system-ui, sans-serif; background:#fff; color:#1d1d1f; }
+  @media (prefers-color-scheme: dark) { body { background:#111; color:#f2f2f2; } }
+  main { max-width:480px; margin:0 auto; padding:80px 16px; text-align:center; }
+  a { display:inline-block; margin-top:20px; padding:14px 22px; border-radius:12px; background:#1a9e75; color:#fff; text-decoration:none; font-weight:600; }
+</style>
+</head>
+<body>
+<main>
+  <p>Signed in. Going back to Caregiver Kid…</p>
+  <a id="back" href="caregiverkid://mychart">Open Caregiver Kid</a>
+</main>
+<script>
+  // Hands the sign-in result (a one-time code that only works with the phone's own secret) straight back to the app.
+  var target = "caregiverkid://mychart" + window.location.search + window.location.hash;
+  document.getElementById("back").href = target;
+  window.location.replace(target);
+</script>
+</body>
+</html>
