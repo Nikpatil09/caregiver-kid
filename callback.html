@@ -19,8 +19,16 @@
 </main>
 <script>
   // Hands the sign-in result (a one-time code that only works with the phone's own secret) straight back to the app.
-  var target = "caregiverkid://mychart" + window.location.search + window.location.hash;
+  // Carelog (the senior care app) shares this page for its demo: its sign-ins have a state starting with "cl.".
+  var state = new URLSearchParams(window.location.search).get("state") || "";
+  var app = state.indexOf("cl.") === 0 ? "carelog" : "caregiverkid";
+  var target = app + "://mychart" + window.location.search + window.location.hash;
   document.getElementById("back").href = target;
+  if (app === "carelog") {
+    document.title = "Back to Carelog";
+    document.querySelector("p").textContent = "Signed in. Going back to Carelog…";
+    document.getElementById("back").textContent = "Open Carelog";
+  }
   window.location.replace(target);
 </script>
 </body>
